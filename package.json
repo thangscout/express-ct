@@ -1,5 +1,5 @@
 {
-  "name": "express",
+  "name": "express-ct",
   "version": "1.0.0",
   "description": "This is content my course on Express by Coders.Tokyo.",
   "main": "index.js",
@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/thangscout/express-ct/issues"
   },
-  "homepage": "https://github.com/thangscout/express-ct#readme"
+  "homepage": "https://github.com/thangscout/express-ct#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
 }
