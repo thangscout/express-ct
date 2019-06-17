@@ -1,29 +1,33 @@
 const express = require('express');
 const app = express();
+const bodyParser = require('body-parser');
+const low = require('lowdb');
+const FileSync = require('lowdb/adapters/FileSync');
+const adapter = new FileSync('db.json');
+const db = low(adapter);
+
+db.defaults({ users: [] })
+  .write();
 
 const port = 8000;
 
 app.set('view engine', 'pug');
 app.set('views', './views');
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
 
-var users = [
-    {id : 1, name: 'Thang'},
-    {id : 2, name: 'Hung'}
-]
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended: true }));
 
 app.get('/', (req, res) => res.render('index', {
     name: 'Scout'
 }));
 
 app.get('/users', (req, res) => res.render('users/index', {
-    users: users
+    users: db.get('users').value()
 }));
 
 app.get('/users/search', (req, res) => {
     var q = req.query.q;
-    var matchedUsers = users.filter((user) => {
+    var matchedUsers = db.get('users').filter((user) => {
         return user.name.toLowerCase().indexOf(q.toLowerCase()) !== -1;
     });
 
@@ -37,7 +41,7 @@ app.get('/users/create', (req, res) => {
 })
 
 app.post('/users/create', (req, res) => {
-    users.push(req.body);
+    db.get('users').push(req.body).write();
     res.redirect('/users'); 
 })
 app.listen(port, () => console.log(`Server listening on port ${port}!`));
