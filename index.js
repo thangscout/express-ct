@@ -27,7 +27,7 @@ app.get('/users', (req, res) => res.render('users/index', {
 
 app.get('/users/search', (req, res) => {
     var q = req.query.q;
-    var matchedUsers = db.get('users').filter((user) => {
+    var matchedUsers = db.get('users').value().filter((user) => {
         return user.name.toLowerCase().indexOf(q.toLowerCase()) !== -1;
     });
 
