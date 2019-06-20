@@ -2,23 +2,28 @@
   "users": [
     {
       "name": "Nam",
-      "id": "Vo-vJ2mmU"
+      "id": "Vo-vJ2mmU",
+      "phone": "0123456789"
     },
     {
       "name": "Hung",
-      "id": "axXCJXXV6"
+      "id": "axXCJXXV6",
+      "phone": "1321321312"
     },
     {
       "name": "Son",
-      "id": "OoB3bmHAF"
+      "id": "OoB3bmHAF",
+      "phone": "6789012345"
     },
     {
       "name": "Kien",
-      "id": "5JAKsF_HF"
+      "id": "5JAKsF_HF",
+      "phone": "1234509876"
     },
     {
       "name": "Hang",
-      "id": "yxl8_rrcY"
+      "id": "yxl8_rrcY",
+      "phone": "1230984567"
     }
   ]
 }

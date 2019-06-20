@@ -1,14 +1,22 @@
 extends ../layouts/comom.pug
 block content
-    h1 Users
+    h1 
+        span.mr-2    Users    
+        a.btn.btn-primary(href="/users/create") New
 
-    a(href="/users/create") New
-    form(action="/users/search", method="GET" class="d-flex")
-        input(type="text", name="q" class="form-control")
-        button(class="btn btn-primary ml-3") Search
-    ul(class="list-group")
+    .d-flex.align-items-center
+        form.ml-auto(action="/users/search", method="GET" class="d-flex")
+            input(type="text", name="q" class="form-control")
+            button(class="btn btn-primary ml-3") Search
+
+    table.table
+        tr
+            th Name
+            th Phone
+            th Actions
         each user in users
-            li(class="list-group-item")
-                span= user.name
-                span &nbsp;
-                a(href='users/'+ user.id) View
+            tr
+                td= user.name
+                td= user.phone
+                td
+                    a.btn.btn-info(href='users/'+ user.id) View

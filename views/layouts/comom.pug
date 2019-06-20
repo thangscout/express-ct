@@ -4,5 +4,15 @@ html
         integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T",
         crossorigin="anonymous")
     body
-        div(class="container")
+        nav.navbar.navbar-expand-lg.navbar-light.bg-light
+            a.navbar-brand(href='#') Coder.Tokyo
+            button.navbar-toggler(type='button', data-toggle='collapse', data-target='#navbarSupportedContent', aria-controls='navbarSupportedContent', aria-expanded='false', aria-label='Toggle navigation')
+                span.navbar-toggler-icon
+            #navbarSupportedContent.collapse.navbar-collapse
+                ul.navbar-nav.mr-auto
+                    li.nav-item.active
+                        a.nav-link(href='/') Home
+                    li.nav-item
+                        a.nav-link(href='/users') Users
+        .container.pt-5
             block content
