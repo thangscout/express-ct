@@ -28,7 +28,14 @@
     {
       "name": "Lê Quốc Thắng",
       "phone": "0349576492",
-      "id": "C81BmcoEk"
+      "id": "C81BmcoEk",
+      "email": "thangbiet11@gmail.com",
+      "password": "123456"
+    },
+    {
+      "name": "thangbiet11@gmail.com",
+      "phone": "12",
+      "id": "OUAgUaaUL"
     }
   ]
 }
